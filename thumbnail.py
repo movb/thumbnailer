@@ -15,7 +15,7 @@ columns_count = 4
 margin = 10
 bg_color = (255, 255, 255, 255)
 font_color = (0,0,0)
-font_file = 'tahomabd.ttf'
+font_file = 'fonts/tahomabd.ttf'
 font_size = 16
 time_size = 16
 #time_color = (70, 180, 240)
@@ -113,13 +113,9 @@ def generate_thumb(input_filename, out_filename, caption='', origin_filename=Non
 
     duration = container.duration // 1000000
 
-    #print("video duration: {}".format(duration))
-
     interval = duration/min_thumbnails
     if interval > max_interval:
         interval = max_interval
-
-    #print("interval = {}".format(interval))
 
     frames = get_frames(container, interval)
 
