@@ -5,6 +5,7 @@ import av
 import math
 import datetime
 import os
+import sys
 
 #export PATH="/d/Tools/Anaconda3:$PATH"
 
@@ -21,7 +22,7 @@ time_size = 16
 #time_color = (70, 180, 240)
 time_color = (255, 255, 255)
 info_height = 110
-max_interval = 3*60
+max_interval = 2*60
 
 caption_font = ImageFont.truetype(font_file, font_size)
 time_font = ImageFont.truetype(font_file, time_size)
@@ -128,5 +129,9 @@ def generate_thumb(input_filename, out_filename, caption='', origin_filename=Non
     img = combine_frames(frames, info)
     img.save(out_filename)
 
-file_path = 'C:\\temp\session5844\\record_1.ts'
-generate_thumb(file_path, "out.jpg")
+
+if __name__ == '__main__':
+
+    file_path = sys.argv[0]
+    out_path = sys.argv[1]
+    generate_thumb(file_path, out_path)
